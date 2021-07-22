@@ -74,6 +74,18 @@ int main(){
 
 
 /*
+For Input:
+5 4
+0 1 
+0 2
+0 3 
+2 4
+
+Your Output is: 
+0 1 2 3 4 
+*/
+
+/*
 TC: O(N+E)
 N is time taken for visiting N nodes, and E is for traveling through adjacent nodes overall.
 
