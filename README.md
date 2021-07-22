@@ -21,3 +21,4 @@ A Graph is a data structure that consists of the following two components:
 
 2. **Adjacency List:** Graph can also be implemented using an array of lists. That is every index of the array will contain a complete list. Size of the array is equal to the number of vertices and every index i in the array will store the list of vertices connected to the vertex numbered i. Let the array be array[]. An entry array[i] represents the list of vertices adjacent to the ith vertex. This representation can also be used to represent a weighted graph. The weights of edges can be represented as lists of pairs.
 ![image](https://user-images.githubusercontent.com/81489001/126602327-ed7a6cd2-0176-4fdc-86de-d675bc2448a9.png)
+
