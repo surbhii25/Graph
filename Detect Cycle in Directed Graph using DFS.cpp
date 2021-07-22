@@ -48,8 +48,8 @@ class Solution
         {
             // code here
             int vis[V], dfsVis[V];
-            memset(vis, 0, sizeof vis);
-            memset(dfsVis, 0, sizeof dfsVis);
+            memset(vis, 0, sizeof vis);			// We can use memset() to set all values as 0 or -1 for integral data types also.
+            memset(dfsVis, 0, sizeof dfsVis);		// It will not work if we use it to set as other values. The reason is simple, memset works byte by byte.  
 
             for(int i=0; i<V; i++) {
                 if(!vis[i]) {
