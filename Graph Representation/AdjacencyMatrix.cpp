@@ -17,7 +17,27 @@ int main() {
   for(int i = 0; i < edges; ++i) {
     cin >> x >> y;
     A[x][y] = true;                             //Mark the edges from vertex x to vertex y
+  }
+  
+  if(A[3][4] == true)
+    cout << “There is an edge between 3 and 4.” << endl;
+  else 
+    cout << “There is no edge between 3 and 4.” << endl;
+
+  if(A[2][3] == true)
+    cout << “There is an edge between 2 and 3.” << endl;
+  else 
+    cout << “There is no edge between 2 and 3.” << endl;
+
+  return 0;
 }
+
+
+/* OUTPUT:
+There is an edge between 3 and 4.
+There is no edge between 2 and 3.
+*/
+
 
 // Pros: Representation is easier to implement and follow. Removing an edge takes O(1) time. Queries like whether there is an edge from vertex 'u' to vertex 'v' are efficient and can be done O(1).
 
