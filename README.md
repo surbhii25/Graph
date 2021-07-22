@@ -1,2 +1,2 @@
-# Graph-Algorithms
-Collection of fundamental Graph Algorithms
+# Graph Algorithms
+
