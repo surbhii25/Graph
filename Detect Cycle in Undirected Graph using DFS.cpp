@@ -15,10 +15,75 @@ To find the back edge to any of its ancestor keep a visited array and if there i
 7. Else if for all vertices the function returns false return false.
 */
 
+#include<bits/stdc++.h>
+using namespace std;
 
+class Solution 
+{
+    public:
+    
+        bool checkCycle(int node, int parent, vector<int> &vis, vector<int> adj[]) {
+            vis[node] = 1;
+            for(auto it : adj[node]) {
+                if(!vis[it]) {
+                    if(checkCycle(it, node, vis, adj))
+                        return true;
+                }
+                else if(it != parent)
+                    return true;
+            }
+            return false;
+        }
+    
+        //Function to detect cycle in an undirected graph.
+        bool isCycle(int V, vector<int>adj[])
+        {
+            // Code here
+            vector<int> vis(V+1, 0);
+            for(int i=0; i<V; i++) {
+                if(!vis[i]) {
+                    if(checkCycle(i, -1, vis, adj))
+                        return true;
+                }
+            }
+            return false;
+        }
+};
+
+int main() {
+	int tc;
+	cin >> tc;
+	while(tc--) {
+		int V, E;
+		cin >> V >> E;
+		vector<int>adj[V];
+		for(int i = 0; i < E; i++){
+			int u, v;
+			cin >> u >> v;
+			adj[u].push_back(v);
+			adj[v].push_back(u);
+		}
+		Solution obj;
+		bool ans = obj.isCycle(V, adj);
+		if(ans)
+			cout << "1\n";
+		else 
+            cout << "0\n";
+	}
+	return 0;
+}
 
 /*
+For Input:
+5 5
+0 4
+1 2
+1 4
+2 3
+3 4
 
+Your Output is: 
+1
 */
 
 /*
