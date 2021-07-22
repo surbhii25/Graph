@@ -39,15 +39,14 @@ class Solution
                 }
             }
         }
-
         return bfs;
     }
 };
 
-int main(){
+int main() {
     int tc;
     cin >> tc;
-    while(tc--){
+    while(tc--) {
       int V, E;
       cin >> V >> E;
 
