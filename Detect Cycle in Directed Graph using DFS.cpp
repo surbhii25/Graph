@@ -26,5 +26,9 @@ The edge that connects the current vertex to the vertex in the recursion stack i
 */
 
 /*
+TC: O(V+E)
+Time Complexity of this method is same as time complexity of DFS traversal which is O(V+E).
 
+SC: O(V)
+To store the visited and recursion stack O(V) space is needed.
 */
