@@ -107,7 +107,13 @@ int main()
 
 
 /*
+For Input:
+2 1
+0 1 9
+0
 
+Your Output is: 
+0 9 
 */
 
 /*
