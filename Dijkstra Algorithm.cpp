@@ -6,6 +6,8 @@ Each node at this SPT stores the value of the shortest path from the source vert
 Dijkstra's algorithm is very similar to Prim's algorithm for minimum spanning tree. 
 Like Prim's MST, we generate a SPT (shortest path tree) with given source as root.
 
+Dijkstra's algorithm is a Greedy algorithm and time complexity is O(VLogV) (with the use of Fibonacci heap).
+
 Below is the complete algorithm using priority_queue(min heap) to implement Dijkstra's Algorithm:
 1) Initialize distances of all vertices as infinite.
 
@@ -125,7 +127,7 @@ Your Output is:
 */
 
 /*
-Time Complexity: O(V * logV)
+Time Complexity: O(V * logV) (with the use of Fibonacci heap)
 The time complexity of the Dijkstra's Algorithm when implemented using a min heap is O(E * logV), where E is the number of Edges and V is the number of vertices.
 
 Space Complexity: O(N) + O(N) because we used dist array and adj list.
