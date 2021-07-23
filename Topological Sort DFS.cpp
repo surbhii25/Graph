@@ -113,6 +113,6 @@ Your Output is:
 TC: O(V+E)
 The above algorithm is simply DFS with an extra stack. So time complexity is the same as DFS which is.
 
-SC: O(V)
+AS: O(V)
 The extra space is needed for the stack.
 */
