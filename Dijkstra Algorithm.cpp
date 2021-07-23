@@ -36,7 +36,7 @@ Note: The Dijkstra's Algorithm doesn't work in the case when the Graph has negat
 #include<bits/stdc++.h>
 using namespace std;
 
-# define INF INT_MAX
+#define INF INT_MAX
 typedef pair<int,int> iPair;
 
 class Solution
