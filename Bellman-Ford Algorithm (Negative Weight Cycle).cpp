@@ -71,5 +71,6 @@ Your Output is:
 */
 
 /*
-
+TC: O(n*m)
+SC: O(n)
 */
