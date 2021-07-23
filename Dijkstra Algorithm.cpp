@@ -1,5 +1,5 @@
 /*
-Basic Idea: Given a graph and a source vertex in the graph, find the shortest paths from source to all vertices in the given graph.
+Problem: Given a graph and a source vertex in the graph, find the shortest paths from source to all vertices in the given graph.
 
 Dijkstra's algorithm is a variation of the BFS algorithm. In Dijkstra's Algorithm, a SPT(shortest path tree) is generated with given source as root. 
 Each node at this SPT stores the value of the shortest path from the source vertex to the current vertex.
@@ -125,6 +125,8 @@ Your Output is:
 */
 
 /*
-Time Complexity: The time complexity of the Dijkstra's Algorithm when implemented using a min heap is O(E * logV), where E is the number of Edges and V is the number of vertices.
+Time Complexity: O(V * logV)
+The time complexity of the Dijkstra's Algorithm when implemented using a min heap is O(E * logV), where E is the number of Edges and V is the number of vertices.
+
 Space Complexity: O(N) + O(N) because we used dist array and adj list.
 */
