@@ -3,6 +3,8 @@ Basic Idea: Given a graph and a source vertex in the graph, find the shortest pa
 
 Dijkstra's algorithm is a variation of the BFS algorithm. In Dijkstra's Algorithm, a SPT(shortest path tree) is generated with given source as root. 
 Each node at this SPT stores the value of the shortest path from the source vertex to the current vertex.
+Dijkstra's algorithm is very similar to Prim's algorithm for minimum spanning tree. 
+Like Prim's MST, we generate a SPT (shortest path tree) with given source as root.
 
 Below is the complete algorithm using priority_queue(min heap) to implement Dijkstra's Algorithm:
 1) Initialize distances of all vertices as infinite.
