@@ -9,18 +9,21 @@ class Solution {
 public:
 
     bool bipartiteDFS(int node, vector<int> adj[], int color[]) {
+        
         if(color[node] == -1)
             color[node] = 1;
             
         for(auto it : adj[node]) {
+			
             if(color[it] == -1) {
                 color[it] = 1 - color[node];
                 if(!bipartiteDFS(it, adj, color)) {
                     return false;
                 }
-                else if(color[it] == color[node]) {
+            }
+			
+            else if(color[it] == color[node]) {
                     return false;
-                }
             }
         }
         
@@ -42,7 +45,7 @@ public:
 	    
 	    return true;
 	}
-	
+
 };
 
 int main(){
@@ -65,6 +68,7 @@ int main(){
 	}
 	return 0;
 }
+
 
 /*
 For Input:
