@@ -37,8 +37,8 @@ using namespace std;
 //User function Template for C++
 
 class Solution{
-	public:
-	/*  Function to implement Dijkstra
+    public:
+    /*  Function to implement Dijkstra
     *   adj: vector of vectors which represents the graph
     *   S: source vertex to start traversing graph with
     *   V: number of vertices
