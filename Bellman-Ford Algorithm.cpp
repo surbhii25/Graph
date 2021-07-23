@@ -31,6 +31,79 @@ The idea is, assuming that there is no negative weight cycle, if we have calcula
 then an iteration over all edges guarantees to give shortest path with at-most (i+1) edge.
 */
 
+#include<bits/stdc++.h>
+using namespace std;
+
+//User function Template for C++
+
+class Solution{
+	public:
+	/*  Function to implement Dijkstra
+    *   adj: vector of vectors which represents the graph
+    *   S: source vertex to start traversing graph with
+    *   V: number of vertices
+    */
+        vector <int> bellman_ford(int V, vector<vector<int>> adj, int S) {
+            // Code here
+            vector<int> dist(V, 1e8);
+
+            set<pair < pair<int,int> , int > > edges;
+
+            for(int i=0; i<adj.size(); i++) {
+                int u = adj[i][0];
+                int v = adj[i][1];
+                int w = adj[i][2];
+                edges.insert({{u,v} , w});
+            }
+
+            dist[S] = 0;
+
+            for(int i=1; i<V; i++) {
+                for(auto it : edges) {
+                    int u = it.first.first;
+                    int v = it.first.second;
+                    int w = it.second;
+                    if(dist[u] + w < dist[v] && dist[u] < 1e8) {
+                        dist[v] = dist[u] + w;
+                    }
+                }
+            }
+
+            return dist;
+        }
+};
+
+int main()
+{
+    int t;
+    cin >> t;
+    while (t--) {
+        int V, E;
+        cin >> V >> E;
+        vector<vector<int>> adj;
+        int i=0;
+        while (i++<E) {
+            int u, v, w;
+            cin >> u >> v >> w;
+            vector<int> t1;
+            t1.push_back(u);
+            t1.push_back(v);
+            t1.push_back(w);
+            adj.push_back(t1);
+        }
+        int S;
+        cin>>S;
+        
+        Solution obj;
+    	vector<int> res = obj.bellman_ford(V, adj, S);
+    	
+    	for(int i=0; i<V; i++)
+    	    cout<<res[i]<<" ";
+    	cout<<endl;
+    }
+
+    return 0;
+}
 
 
 /*
@@ -38,6 +111,6 @@ then an iteration over all edges guarantees to give shortest path with at-most (
 */
 
 /*
-TC: O(N-1) x O(E)
+TC: O(V-1) x O(E) = O(V * E)
 SC: O(N)
 */
