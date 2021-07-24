@@ -88,7 +88,7 @@ Your Output is:
 */
 
 /*
-TC: O(N+E)
-SC: O(N+E) + O(N) + O(N)
+TC: O(V+E)
+SC: O(V+E) + O(V) + O(V)
 */
 
