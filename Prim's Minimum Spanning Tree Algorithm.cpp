@@ -37,7 +37,14 @@ the key value for these vertices indicate the minimum weight edges connecting th
 
 
 /*
+For Input:
+3 3
+0 1 5
+1 2 3
+0 2 1
 
+Your Output is: 
+6
 */
 
 /*
