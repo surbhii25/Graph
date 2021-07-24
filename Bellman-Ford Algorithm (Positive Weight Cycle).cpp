@@ -118,5 +118,5 @@ Your Output is:
 
 /*
 TC: O(V-1) x O(E) = O(V * E)
-SC: O(N)
+SC: O(V)
 */
