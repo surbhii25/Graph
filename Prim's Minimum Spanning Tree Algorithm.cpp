@@ -129,5 +129,7 @@ Your Output is:
 */
 
 /*
-
+Time complexity: O(E+V)*O(LogV) = O((E+V)*LogV) = O(ELogV) with the help of binary heap (For a connected graph, V = O(E))
+If we take a closer look, we can observe that the statements in inner loop are executed O(V+E) times (similar to BFS). 
+The inner loop has operation which takes O(LogV) time. 
 */
