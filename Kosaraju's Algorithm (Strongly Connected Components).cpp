@@ -24,7 +24,7 @@ using namespace std;
 
 class Solution
 {
-	public:
+    public:
 	
 	void dfs(int node, stack<int> &st, vector<int> &vis, vector<int> adj[]) {
 	    vis[node] = 1;
@@ -45,7 +45,7 @@ class Solution
 	    }
 	}
 	
-	//Function to find number of strongly connected components in the graph.
+    //Function to find number of strongly connected components in the graph.
     int kosaraju(int V, vector<int> adj[])
     {
         //code here
