@@ -1,5 +1,10 @@
 /*
 Given a graph and a source vertex src in graph, find shortest paths from src to all vertices in the given graph. The graph may contain negative weight edges. 
+
+Important Notes:
+1. Negative weights are found in various applications of graphs. For example, instead of paying the cost for a path, we may get some advantage if we follow the path.
+2. Bellman-Ford works better (better than Dijkstra's) for distributed systems. 
+   Unlike Dijksra's where we need to find the minimum value of all vertices, in Bellman-Ford, edges are considered one by one.
 */
 
 #include<bits/stdc++.h>
