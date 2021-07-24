@@ -19,10 +19,108 @@ Many people in these groups generally like some common pages or play common game
 or games to the people in the group who have not yet liked commonly liked a page or played a game.
 */
 
+#include<bits/stdc++.h>
+using namespace std;
+
+class Solution
+{
+	public:
+	
+	void dfs(int node, stack<int> &st, vector<int> &vis, vector<int> adj[]) {
+	    vis[node] = 1;
+	    for(auto it : adj[node]) {
+	        if(!vis[it]) {
+	            dfs(it, st, vis, adj);
+	        }
+	    }
+	    st.push(node);
+	}
+	
+	void revDfs(int node, vector<int> &vis, vector<int> transpose[]) {
+	    vis[node] = 1;
+	    for(auto it : transpose[node]) {
+	        if(!vis[it]) {
+	            revDfs(it, vis, transpose);
+	        }
+	    }
+	}
+	
+	//Function to find number of strongly connected components in the graph.
+    int kosaraju(int V, vector<int> adj[])
+    {
+        //code here
+        stack<int> st;
+        vector<int> vis(V, 0);
+        
+        for(int i=0; i<V; i++) {
+            if(!vis[i]) {
+                dfs(i, st, vis, adj);
+            }
+        }
+        
+        vector<int> transpose[V];
+        
+        for(int i=0; i<V; i++) {
+            vis[i] = 0;
+            for(auto it : adj[i]) {
+                transpose[it].push_back(i);
+            }
+        }
+        
+        int count = 0;
+        
+        while(!st.empty()) {
+            int node = st.top();
+            st.pop();
+            if(!vis[node]) {
+                revDfs(node, vis, transpose);
+                count++;
+            }
+        }
+        
+        return count;
+        
+    }
+};
+
+int main()
+{
+    
+    int t;
+    cin >> t;
+    while(t--)
+    {
+    	int V, E;
+    	cin >> V >> E;
+
+    	vector<int> adj[V];
+
+    	for(int i = 0; i < E; i++)
+    	{
+    		int u, v;
+    		cin >> u >> v;
+    		adj[u].push_back(v);
+    	}
+
+    	Solution obj;
+    	cout << obj.kosaraju(V, adj) << "\n";
+    }
+
+    return 0;
+}
 
 
 /*
+For Input:
+5 5
+1 0
+0 2
+2 1
+0 3
+3 4
 
+Your Output is: 
+3
 */
 
 /*
