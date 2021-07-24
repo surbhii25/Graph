@@ -34,7 +34,8 @@ The idea of using key values is to pick the minimum weight edge from cut. The ke
 the key value for these vertices indicate the minimum weight edges connecting them to the set of vertices included in MST.
 */
 
-
+#include<bits/stdc++.h>
+using namespace std;
 
 typedef pair<int,int> iPair;
 
