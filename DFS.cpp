@@ -82,8 +82,8 @@ Your Output is:
 */
 
 /*
-TC: O(N+E)
-N is time taken for visiting N nodes, and E is for traveling through adjacent nodes overall.
-SC: O(N+E) + O(N) + O(N)
+TC: O(V+E)
+V is time taken for visiting V nodes, and E is for traveling through adjacent nodes overall.
+SC: O(V+E) + O(V) + O(V)
 Space for adj list, vis array and queue.
 */
