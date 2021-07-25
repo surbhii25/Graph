@@ -28,7 +28,7 @@ using namespace std;
 
 class Solution
 {
-	public:
+    public:
 	
 	void dfs(int u, int timer, vector<int> &tin, vector<int> &low, vector<int> &parent, vector<int> &vis, vector<int> adj[], vector<pair<int,int>> &bridges) {
 	    
