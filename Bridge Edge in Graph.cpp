@@ -25,7 +25,15 @@ In DFS tree an edge (u, v) (u is parent of v in DFS tree) is bridge if there doe
 
 
 /*
+For Input:
+4 3
+0 1
+1 2
+2 3
+1 2
 
+Your Output is: 
+1
 */
 
 /*
