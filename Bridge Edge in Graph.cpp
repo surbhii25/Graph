@@ -23,6 +23,99 @@ In DFS tree an edge (u, v) (u is parent of v in DFS tree) is bridge if there doe
 */
 
 
+#include<bits/stdc++.h>
+using namespace std;
+
+class Solution
+{
+	public:
+	
+	void dfs(int u, int timer, vector<int> &tin, vector<int> &low, vector<int> &parent, vector<int> &vis, vector<int> adj[], vector<pair<int,int>> &bridges) {
+	    
+	    vis[u] = 1;
+	    tin[u] = low[u] = timer++;
+	    //timer++;
+	    
+	    for(auto v : adj[u]) {
+	        
+	        if(v == parent[u])
+	            continue;
+	        
+	        if(!vis[v]) {
+    	        if(tin[v] == -1) {
+    	            parent[v] = u;
+    	            dfs(v, timer, tin, low, parent, vis, adj, bridges);
+    	            low[u] = min(low[u], low[v]);
+    	            if(low[v] > tin[u]) {
+    	                bridges.push_back({u, v});
+    	            }
+    	        }
+	        }
+	        
+	        else if(v != parent[u]) {
+	            low[u] = min(low[u], tin[v]);
+	        }
+	        
+	    }
+	    
+	}
+	
+    //Function to find if the given edge is a bridge in graph.
+    int isBridge(int V, vector<int> adj[], int c, int d) 
+    {
+        // Code here
+        
+        int timer = 0;
+        
+        vector<int> tin(V, -1);
+        vector<int> low(V, -1);
+        vector<int> parent(V, -1);
+        vector<int> vis(V, 0);
+        
+        vector<pair<int,int>> bridges;
+        
+        for(int i=0; i<V; i++) {
+            if(!vis[i]) {
+                dfs(i, timer, tin, low, parent, vis, adj, bridges);
+            }
+        }
+        
+        for(auto it : bridges) {
+            if((it.first==c && it.second==d) || (it.first==d && it.second==c)) {
+                return true;
+            }
+        }
+        
+        return false;
+    }
+};
+
+int main()
+{
+    int t;
+    cin >> t;
+    while (t--) {
+        int V, E;
+        cin >> V >> E;
+        vector<int> adj[V];
+        int i=0;
+        while (i++<E) {
+            int u, v;
+            cin >> u >> v;
+            adj[u].push_back (v);
+            adj[v].push_back (u);
+        }
+        
+        int c,d;
+        cin>>c>>d;
+        
+        Solution obj;
+    	cout << obj.isBridge(V, adj, c, d) << "\n";
+    }
+
+    return 0;
+}
+
 
 /*
 For Input:
