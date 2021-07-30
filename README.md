@@ -1,4 +1,4 @@
-# Graph Algorithms
+# Graph
 
 A Graph is a data structure that consists of the following two components:
 1. A finite set of vertices also called nodes.
